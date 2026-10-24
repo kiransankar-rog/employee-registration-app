@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS employee_db
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE employee_db;
+
+CREATE TABLE IF NOT EXISTS employees (
+  id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  name        VARCHAR(100) NOT NULL,
+  email       VARCHAR(120) NOT NULL UNIQUE,
+  department  VARCHAR(50)  NOT NULL,
+  phone       VARCHAR(15)  NOT NULL,
+  created_at  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
